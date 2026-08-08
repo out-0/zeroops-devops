@@ -1,7 +1,7 @@
 name: Hello ZeroOps
 on: [push]
 jobs:
-  hello
+  hello:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Welcome to ZeroOps"
