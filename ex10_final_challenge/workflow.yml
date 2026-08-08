@@ -1,0 +1,35 @@
+# Production workflow
+name: Production Workflow
+on:
+  push:
+	  branches:
+	    - main
+  pull_request:
+
+jobs:
+  build:
+	runs-on: ubuntu-latest
+	steps:
+	  - name: Checkout
+		uses: actions/checkout@v4
+
+	  - name: Setup Python
+		uses: actions/setup-python@v5
+		with:
+		  python-version: '3.11'
+
+	  - name: Set environment variables
+		run: |
+		  echo "PROJECT_NAME=ZeroOps Production" >> $GITHUB_ENV
+		  echo "PROJECT_NAME: $PROJECT_NAME"
+
+	  - name: Install dependencies
+		run: pip install -r requirements.txt
+
+	  - name: Run tests
+		run: pytest
+
+	  - name: Success notification
+		run: echo "Pipeline completed successfully!"
+
+
