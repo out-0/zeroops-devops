@@ -1,0 +1,12 @@
+on: push
+
+jobs:
+  bullshit:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_NAME: "ZeroOps"
+      AUTHOR: "DevOpsTeam"
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "$PROJECT_NAME by $AUTHOR"
+
