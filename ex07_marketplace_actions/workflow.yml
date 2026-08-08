@@ -9,5 +9,5 @@ jobs:
       - name: python
         uses: actions/setup-python@v5
         with:
-          pyton-version: '3.11'
+          python-version: '3.11'
       - run: python --version
