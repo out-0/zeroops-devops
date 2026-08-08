@@ -1,0 +1,26 @@
+stages:
+  test
+  build
+  deploy
+
+on: push
+jobs:
+
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: | 
+          echo "Testing backend"
+          echo "Backend tests passing"
+
+  frontend:
+    needs: backend
+    script: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: 
+          echo "Testing frontend"
+          echo "Building frontend after backend success"
+
