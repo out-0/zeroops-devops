@@ -1,3 +1,4 @@
+on: push
 jobs:
   show_me:
     runs-on: ubuntu-latest
