@@ -1,6 +1,4 @@
 on: push
-
-
 jobs:
   anythings:
     runs-on: ubuntu-latest
@@ -8,6 +6,6 @@ jobs:
       API_KEY: ${{ secrets.API_KEY }}
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Key length: ${#API_KEY}"
+      - run: echo "Key length ${#API_KEY}"
 
 
