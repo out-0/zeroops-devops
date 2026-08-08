@@ -1,0 +1,13 @@
+on: push
+
+jobs:
+  setup:
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: python
+        uses: actions/setup-python@v5
+      - with:
+          pyton-version: '3.11'
+      - run: python --version
